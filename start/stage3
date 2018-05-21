@@ -1,3 +1,5 @@
+mkdir -p "$VAR_APP_DATA"
+
 local node=""
 if [ -n "$VAR_CONFD_NODES" ]
 then
