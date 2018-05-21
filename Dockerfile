@@ -6,7 +6,8 @@ ENV APP_HOME="/opt/backup" \
     CONFD_HOME="/opt/confd"
 
 COPY ./backup/requirements.txt /${APP_HOME}/
-COPY ./root /
+COPY ./etc /etc
+COPY ./templates /opt/confd/etc/templates
 COPY ./backup/src/ /${APP_HOME}/
 COPY ./backup/config /${APP_HOME}/config
 
