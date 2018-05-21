@@ -8,7 +8,6 @@ ENV APP_HOME="/opt/backup" \
     CONFD_HOME="/opt/confd"
 
 COPY ./backup /${APP_HOME}
-COPY ./etc /etc
 COPY ./confd ${CONFD_HOME}/etc/conf.d
 COPY ./templates /opt/confd/etc/templates
 
