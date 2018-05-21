@@ -1,0 +1,13 @@
+[template]
+prefix = "/backup"
+src = "rancher-backup.yml.tmpl"
+dest = "/opt/backup/config/rancher-backup.yml"
+uid = 1001
+gid = 1001
+mode = "0644"
+keys = [
+  "/duplicity",
+  "/rancher",
+  "/module",
+  "/cron"
+]
