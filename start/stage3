@@ -1,4 +1,5 @@
-mkdir -p "$VAR_APP_DATA"
+/bin/mkdir -p "$VAR_APP_DATA"
+/bin/chown -R $VAR_LINUX_USER /opt/backup "$VAR_APP_DATA" /var/log/backup
 
 local node=""
 if [ -n "$VAR_CONFD_NODES" ]
