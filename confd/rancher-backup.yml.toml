@@ -1,0 +1,8 @@
+[template]
+prefix = "/backup"
+src = "cron.tmpl"
+dest = "/etc/services.d/cron/run"
+mode = "0755"
+keys = [
+  "/cron",
+]
