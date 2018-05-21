@@ -37,6 +37,7 @@ ENV VAR_CONFD_PREFIX_KEY="/backup" \
     VAR_S6_BEHAVIOUR_IF_STAGE2_FAILS="2" \
     VAR_APP_DATA="/backup" \
     VAR_LINUX_USER="backup" \
+    VAR_FINAL_COMMAND="python /opt/backup/backup.py"
 
     CONTAINER_NAME="rancher-backup" \
     CONTAINER_AUHTOR="Sebastien LANGOUREAUX <linuxworkgroup@hotmail.com>" \
