@@ -1,10 +1,11 @@
-#!/usr/bin/with-contenv bash
+#!/bin/sh
 
-cat << EOF > ${CONFD_HOME}/etc/conf.d/rancher-backup.yml.toml
+{
+echo "\
 [template]
-prefix = "${CONFD_PREFIX_KEY}"
-src = "rancher-backup.yml.tmpl"
-dest = "${APP_HOME}/config/rancher-backup.yml"
+prefix = \"${CONFD_PREFIX_KEY}\"
+src = \"rancher-backup.yml.tmpl\"
+dest = \"${APP_HOME}/config/rancher-backup.yml"
 uid = 1001
 gid = 1001
 mode = "0644"
@@ -14,10 +15,10 @@ keys = [
   "/module",
   "/cron"
 ]
-EOF
+} > /opt/confd/etc/conf.d/rancher-backup.yml.toml
 
 
-cat << EOF > ${CONFD_HOME}/etc/conf.d/cron.toml
+cat << EOF > /opt/confd/etc/conf.d/cron.toml
 [template]
 prefix = "${CONFD_PREFIX_KEY}"
 src = "cron.tmpl"
