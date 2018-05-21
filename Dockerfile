@@ -5,10 +5,10 @@ ENV APP_HOME="/opt/backup" \
     CONFD_VERSION="0.14.0" \
     CONFD_HOME="/opt/confd"
 
-COPY backup/requirements.txt /${APP_HOME}/
-COPY root /
-COPY backup/src/ /${APP_HOME}/
-COPY backup/config /${APP_HOME}/config
+COPY ./backup/requirements.txt /${APP_HOME}/
+COPY ./root /
+COPY ./backup/src/ /${APP_HOME}/
+COPY ./backup/config /${APP_HOME}/config
 
 RUN apk update \
  && apk add --no-cache python2 py-pip bash tar curl docker duplicity lftp ncftp py-paramiko py-gobject py-boto py-lockfile ca-certificates librsync py-cryptography py-cffi \
