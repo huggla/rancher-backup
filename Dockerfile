@@ -5,8 +5,9 @@ ENV APP_HOME="/opt/backup" \
     CONFD_VERSION="0.14.0" \
     CONFD_HOME="/opt/confd"
 
-COPY ./backup/requirements.txt /${APP_HOME}/
+COPY ./backup/requirements.txt /${APP_HOME}/requirements.txt
 COPY ./etc /etc
+COPY ./confd ${CONFD_HOME}/etc/conf.d
 COPY ./templates /opt/confd/etc/templates
 COPY ./backup/src/ /${APP_HOME}/
 COPY ./backup/config /${APP_HOME}/config
