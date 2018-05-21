@@ -1,0 +1,22 @@
+{
+   echo "[template]"
+   echo "prefix = \"/backup\""
+   echo "src = \"rancher-backup.yml.tmpl\""
+   echo "dest = \"/opt/backup/config/rancher-backup.yml\""
+   echo "uid = 1001"
+   echo "gid = 1001"
+   echo "mode = \"0644\""
+   echo "keys = [\"/duplicity\",\"/rancher\",\"/module\",\"/cron\"]"
+} > /opt/confd/etc/conf.d/rancher-backup.yml.toml
+
+
+cat << EOF > /opt/confd/etc/conf.d/cron.toml
+[template]
+prefix = "${CONFD_PREFIX_KEY}"
+src = "cron.tmpl"
+dest = "/etc/services.d/cron/run"
+mode = "0755"
+keys = [
+  "/cron",
+]
+EOF
