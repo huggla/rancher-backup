@@ -5,3 +5,6 @@ then
 fi
 
 /opt/confd/bin/confd -confdir /opt/confd/etc -onetime -backend "$VAR_CONFD_BACKEND" "$VAR_PREFIX" "$VAR_NODE"
+/backup true backup 0660 0770
+/opt/backup/config true backup  0660 0770
+/opt/backup/.gnupg true backup 0600 0700
