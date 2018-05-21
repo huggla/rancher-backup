@@ -1,0 +1,5 @@
+pyyaml
+Jinja2
+mock
+cattle
+azure.storage==0.20.0
